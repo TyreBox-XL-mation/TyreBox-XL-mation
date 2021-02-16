@@ -19,6 +19,7 @@ class Welcome extends React.Component {
       <div>
         Welcome page : onClick on ''knowmore'' button will redirect to Home.jsx component
         <App />
+        ines's change
       </div>)
   }
 }
