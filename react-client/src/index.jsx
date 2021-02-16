@@ -1,10 +1,9 @@
 import React from "react";
 import Home from "./components/Home.jsx";
 import Ourbrands from "./components/Ourbrands.jsx";
-<<<<<<< HEAD
+
 import Contactus from "./components/Contactus.jsx";
-=======
->>>>>>> f7da8fb2725ec5eb6241b9d2df7546dfe1558956
+
 
 class App extends React.Component {
   constructor(props) {
@@ -29,16 +28,13 @@ class App extends React.Component {
       return <Home />;
     } else if (view === "ourbrands") {
       return <Ourbrands />;
-<<<<<<< HEAD
+
     } else if (view === "contactus") {
       return <Contactus />;
     }
-=======
-    } else {
-      return <Contactus />;
-    }
 
->>>>>>> f7da8fb2725ec5eb6241b9d2df7546dfe1558956
+    } 
+
   }
 
   render() {
@@ -56,16 +52,18 @@ class App extends React.Component {
               className="ourbrands"
               onClick={() => this.changeView("ourbrands")}
             >
-<<<<<<< HEAD
+
               <button
                 type="button"
                 id="ourbrands"
                 className="btn btn-primary"
                 onClick={() => this.changeView("ourbrands")}
               >
-=======
-              <button type="button" id="ourbrands" className="btn btn-primary">
->>>>>>> f7da8fb2725ec5eb6241b9d2df7546dfe1558956
+                Our Brands
+                </button>
+
+              <button type="button" id="ourbrands" className="btn btn-primary" onClick={() => this.changeView("ourbrands")}>
+
                 Our Brands
               </button>
             </span>
@@ -92,10 +90,7 @@ class App extends React.Component {
     );
   }
 
-<<<<<<< HEAD
+
   //this is a test
-=======
->>>>>>> f7da8fb2725ec5eb6241b9d2df7546dfe1558956
-}
 
 export default App;
