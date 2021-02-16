@@ -1,9 +1,7 @@
 import React from "react";
 import Home from "./components/Home.jsx";
 import Ourbrands from "./components/Ourbrands.jsx";
-
 import Contactus from "./components/Contactus.jsx";
-
 
 class App extends React.Component {
   constructor(props) {
@@ -28,13 +26,9 @@ class App extends React.Component {
       return <Home />;
     } else if (view === "ourbrands") {
       return <Ourbrands />;
-
     } else if (view === "contactus") {
       return <Contactus />;
     }
-
-    } 
-
   }
 
   render() {
@@ -52,18 +46,12 @@ class App extends React.Component {
               className="ourbrands"
               onClick={() => this.changeView("ourbrands")}
             >
-
               <button
                 type="button"
                 id="ourbrands"
                 className="btn btn-primary"
                 onClick={() => this.changeView("ourbrands")}
               >
-                Our Brands
-                </button>
-
-              <button type="button" id="ourbrands" className="btn btn-primary" onClick={() => this.changeView("ourbrands")}>
-
                 Our Brands
               </button>
             </span>
@@ -89,8 +77,6 @@ class App extends React.Component {
       </div>
     );
   }
-
-
-  //this is a test
+}
 
 export default App;
