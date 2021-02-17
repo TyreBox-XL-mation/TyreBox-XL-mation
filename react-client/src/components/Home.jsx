@@ -1,4 +1,6 @@
 import React from 'react'
+import Latestproduct from './Latestproduct.jsx'
+import Latestservices from './Latestservices.jsx'
 
 
 
@@ -14,8 +16,8 @@ class Home extends React.Component {
     return (
       <div className='home'>
         <div>dropdown component</div>
-        <div>lates product component</div>
-        <div>Our services component</div>
+        <div><Latestproduct /></div>
+        <div><Latestservices /></div>
       </div>
     )
   }
