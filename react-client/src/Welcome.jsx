@@ -44,14 +44,14 @@ class Welcome extends React.Component {
                       <button
                         type="button"
                         className="btn btn-warning details"
-                        onClick={this.handleClick.bind(this)} >
+                        onClick={this.handleClick.bind(this)}
+                      >
                         Know more
                       </button>
                       {/* <h3>Quality</h3>
                   <p>Quality</p> */}
                     </div>
                   </div>
-
 
                   <div className="item">
                     <img
@@ -110,11 +110,64 @@ class Welcome extends React.Component {
             </div>
           </div>
         ) : (
-            <App />
-          )}
+          <App />
+        )}
+        <div className="footer-dark">
+          <footer>
+            <div className="container">
+              <div className="row">
+                <div className="col-sm-6 col-md-3 item">
+                  <h3>Services</h3>
+                  <ul>
+                    <li>
+                      <a href="#">Click here</a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-sm-6 col-md-3 item">
+                  <h3>About</h3>
+                  <ul>
+                    <li>
+                      <a
+                        onClick="location.href='https://github.com/TyreBox-XL-mation/TyreBox-XL-mation'"
+                        href="https://github.com/TyreBox-XL-mation/TyreBox-XL-mation"
+                      >
+                        Tyre-Box
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-md-6 item text">
+                  <h3>Tyre-box</h3>
+                  <p>
+                    As a leading global competitor in the tire industry,
+                    Tyre-Box Company has manufacturing facilities on three
+                    continents, sales and distribution networks around the world
+                    and products that meet and exceed the demands of the world's
+                    most dynamic markets.
+                  </p>
+                </div>
+                <div className="col item social">
+                  <a href="#">
+                    <i className="icon ion-social-facebook"></i>
+                  </a>
+                  <a href="#">
+                    <i className="icon ion-social-twitter"></i>
+                  </a>
+                  <a href="#">
+                    <i className="icon ion-social-snapchat"></i>
+                  </a>
+                  <a href="#">
+                    <i className="icon ion-social-instagram"></i>
+                  </a>
+                </div>
+              </div>
+              <p className="copyright">XL-Mation © 2021</p>
+            </div>
+          </footer>
+        </div>
       </div>
     );
-
   }
 }
 
