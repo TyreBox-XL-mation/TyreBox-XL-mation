@@ -3,16 +3,15 @@ import React from "react";
 import lp from "../../../L-P-fakedata.js";
 
 class Latestproduct extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
+  constructor(props) {
+    super(props);
+  }
 
-    render() {
-        //rendering and mapping  the cards
-        return (
-            <div id="latest-product-card-container">
-                {lp.map((element, index) => (
+  render() {
+    //rendering and mapping  the cards
+    return (
+      <div id="latest-product-card-container">
+        {/* {lp.map((element, index) => (
                     <div key={index} className="latest-product-card">
                         <img src={element.image} className="latest-product-img" />
                         <div className="latest-product-container">
@@ -22,9 +21,9 @@ class Latestproduct extends React.Component {
                             <h3>{element.price}</h3>
                         </div>
                     </div>
-                ))}
-            </div>
-        );
-    }
+                ))} */}
+      </div>
+    );
+  }
 }
 export default Latestproduct;
