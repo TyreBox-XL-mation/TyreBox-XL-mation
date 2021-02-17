@@ -1,6 +1,7 @@
 import React from 'react'
 import Latestproduct from './Latestproduct.jsx'
 import Latestservices from './Latestservices.jsx'
+import Dropdown from './Dropdown.jsx'
 
 
 
@@ -14,10 +15,13 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className='home'>
-        <div>dropdown component</div>
-        <div><Latestproduct /></div>
-        <div><Latestservices /></div>
+      <div>
+        <div className='home'>
+          <div classname='homeimage'><img id='homeimg' src='https://autoservicekole.nl/wp-content/uploads/2017/09/wheel-2373040_1920.jpg' /></div>
+          <div ><Dropdown /></div>
+          <div><Latestproduct /></div>
+          <div><Latestservices /></div>
+        </div>
       </div>
     )
   }

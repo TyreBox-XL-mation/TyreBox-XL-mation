@@ -11,7 +11,7 @@ class Latestservices extends React.Component {
         //rendering and mapping  the cards
         return (
             <div className="latest-service-container">
-                <h1>All services</h1>
+                <h1>Our services</h1>
                 <div className="latest-service-heading">
                     {data.map((element, index) => (
                         <div key={index} className="latest-service-card">

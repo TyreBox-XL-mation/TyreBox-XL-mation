@@ -18,6 +18,7 @@ class Welcome extends React.Component {
       <div>
         {!this.state.view ? (
           <div className=" segment">
+
             <div className="container">
               <div
                 id="myCarousel"
@@ -37,12 +38,14 @@ class Welcome extends React.Component {
                 <div className="carousel-inner">
                   <div className="item active">
                     <img
-                      src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
+                      className='welcomeimg'
+                      src="https://content.mosaiquefm.net/uploads/content/thumbnails/goodyear_un_concept_unique_lance_par_parenin_1563205674.jpg"
                       alt="Los Angeles"
                     />
                     <div className="carousel-caption">
                       <button
                         type="button"
+                        id='wlmbtn'
                         className="btn btn-warning details"
                         onClick={this.handleClick.bind(this)} >
                         Know more
@@ -55,6 +58,7 @@ class Welcome extends React.Component {
 
                   <div className="item">
                     <img
+                      className='welcomeimg'
                       src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
                       alt="Chicago"
                     />
@@ -73,9 +77,10 @@ class Welcome extends React.Component {
 
                   <div className="item">
                     <img
+                      className='welcomeimg'
                       src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
                       alt="New York"
-                    />
+                    ></img>
                     <div className="carousel-caption">
                       <button
                         type="button"
@@ -112,6 +117,61 @@ class Welcome extends React.Component {
         ) : (
             <App />
           )}
+        <div className="footer-dark">
+          <footer>
+            <div className="container">
+              <div className="row">
+                <div className="col-sm-6 col-md-3 item">
+                  <h3>Services</h3>
+                  <ul>
+                    <li>
+                      <a href="#">Click here</a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-sm-6 col-md-3 item">
+                  <h3>About</h3>
+                  <ul>
+                    <li>
+                      <a
+                        onClick="location.href='https://github.com/TyreBox-XL-mation/TyreBox-XL-mation'"
+                        href="https://github.com/TyreBox-XL-mation/TyreBox-XL-mation"
+                      >
+                        Tyre-Box
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+                <div className="col-md-6 item text">
+                  <h3>Tyre-box</h3>
+                  <p>
+                    As a leading global competitor in the tire industry,
+                    Tyre-Box Company has manufacturing facilities on three
+                    continents, sales and distribution networks around the world
+                    and products that meet and exceed the demands of the world's
+                    most dynamic markets.
+                  </p>
+                </div>
+                <div className="col item social">
+                  <a href="#">
+                    <i className="icon ion-social-facebook"></i>
+                  </a>
+                  <a href="#">
+                    <i className="icon ion-social-twitter"></i>
+                  </a>
+                  <a href="#">
+                    <i className="icon ion-social-snapchat"></i>
+                  </a>
+                  <a href="#">
+                    <i className="icon ion-social-instagram"></i>
+                  </a>
+                </div>
+              </div>
+              <p className="copyright">XL-Mation © 2021</p>
+            </div>
+          </footer>
+        </div>
+
       </div>
     );
 
