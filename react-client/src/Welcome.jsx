@@ -18,6 +18,7 @@ class Welcome extends React.Component {
       <div>
         {!this.state.view ? (
           <div className=" segment">
+
             <div className="container">
               <div
                 id="myCarousel"
@@ -37,12 +38,14 @@ class Welcome extends React.Component {
                 <div className="carousel-inner">
                   <div className="item active">
                     <img
-                      src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
+                      className='welcomeimg'
+                      src="https://content.mosaiquefm.net/uploads/content/thumbnails/goodyear_un_concept_unique_lance_par_parenin_1563205674.jpg"
                       alt="Los Angeles"
                     />
                     <div className="carousel-caption">
                       <button
                         type="button"
+                        id='wlmbtn'
                         className="btn btn-warning details"
                         onClick={this.handleClick.bind(this)}
                       >
@@ -55,6 +58,7 @@ class Welcome extends React.Component {
 
                   <div className="item">
                     <img
+                      className='welcomeimg'
                       src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
                       alt="Chicago"
                     />
@@ -73,9 +77,10 @@ class Welcome extends React.Component {
 
                   <div className="item">
                     <img
+                      className='welcomeimg'
                       src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
                       alt="New York"
-                    />
+                    ></img>
                     <div className="carousel-caption">
                       <button
                         type="button"
@@ -110,8 +115,8 @@ class Welcome extends React.Component {
             </div>
           </div>
         ) : (
-          <App />
-        )}
+            <App />
+          )}
         <div className="footer-dark">
           <footer>
             <div className="container">

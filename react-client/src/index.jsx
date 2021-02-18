@@ -32,12 +32,12 @@ class App extends React.Component {
 
   render() {
     return (
+
       <div>
         <header className="box">
           <div className="boximg">
             <img id="logo" src="logo/logo.png"></img>
           </div>
-
           <div className="together">
             <a className="cta" href="#">
               <button>CONTACT US</button>
@@ -46,12 +46,60 @@ class App extends React.Component {
             <a className="cta" href="#">
               <button id="leftbutton">OUR BRANDS</button>
             </a>
+            <a className="cta" href="#">
+              <button id="homebutton">HOME</button>
+            </a>
           </div>
+
         </header>
         <div className="main">{this.renderView()}</div>
       </div>
+
+
     );
   }
 }
 
 export default App;
+
+
+
+
+// <div>
+// <nav>
+//   <div className="nav">
+//     <img
+//       src=""
+//       className="home"
+//       onClick={() => this.changeView("home")}
+//     />
+
+//     <span
+//       className="ourbrands"
+//       onClick={() => this.changeView("ourbrands")}
+//     >
+//       <button type="button" id="ourbrands" className="btn btn-primary">
+//         Our Brands
+//       </button>
+//     </span>
+
+//     <span
+//       className={
+//         this.state.view === "home" ? "nav-selected" : "nav-unselected"
+//       }
+//     >
+//       <button
+//         type="button"
+//         className="btn btn-success"
+//         id="contactus"
+//         onClick={() => this.changeView("contactus")}
+//       >
+//         Contact Us
+//       </button>
+//     </span>
+//   </div>
+// </nav>
+
+// <div className="main">{this.renderView()}</div>
+
+// </div>

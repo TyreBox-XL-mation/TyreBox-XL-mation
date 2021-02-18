@@ -1,193 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;1,200;1,300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Neucha&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-}
-.box {
-  margin-top: 0px;
-  padding-bottom: 5px;
-  background-color: white !important;
-}
 
-button {
-  font-family: "Open+Sans", sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  color: black;
-  text-decoration: none;
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1px;
-}
-.together {
-  display: flex;
-  justify-content: space-between;
-}
-.cta {
-  margin: 0px;
-}
-#logo {
-  padding-top: 20px;
-  cursor: pointer;
-  max-width: 300px;
-  max-height: 150px;
-}
-
-#leftbutton {
-  margin-left: 20px;
-}
-
-button {
-  padding: 8px;
-  background-color: white;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-  transition: all 0, 3s ease 0s;
-}
-button:hover {
-  background-color: whitesmoke;
-}
-.back {
-  background-color: yellow;
-}
-
-.container {
-  margin: 0px;
-  max-width: 100%;
-  max-height: 800px;
-  background-color: black !important;
-  position: relative;
-  display: block;
-  transition: 0.1s !important;
-}
-
-.segment {
-  background-color: yellow !important;
-  border: 50px solid yellow !important;
-}
-.details {
-  background-color: yellow !important;
-  color: black;
-
-  width: 200px;
-  height: 50px;
-  margin-top: 50px;
-  margin-left: 700px;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-}
-
-/* latest product component css  */
-
-#latest-product-card-container {
-  display: flex;
-}
-
-.latest-product-card {
-  /* Add shadows to create the "card" effect */
-  box-shadow: 0 4px 8px 0 rgba(210, 224, 11, 0.2);
-  transition: 0.3s;
-  text-align: center;
-  background-color: yellow;
-  width: 40%;
-
-  margin-left: 4.9rem;
-  margin-top: 3rem;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  border-radius: 0.5em;
-}
-
-/* On mouse-over, add a deeper shadow */
-.latest-product-card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-/* Add some padding inside the card container */
-.latest-product-container {
-  padding: 2px 16px;
-  font-family: "OpenSans", sans-serif;
-}
-.latest-product-img {
-  width: 100%;
-  height: 12vw;
-  object-fit: contain;
-}
-
-/* latest service component css */
-.latest-service-img {
-  max-width: 100%;
-  max-height: 240px;
-}
-.latest-service-container {
-  width: 85em;
-  margin: 1em;
-  text-align: center;
-}
-.latest-service-heading {
-  margin-left: 2em;
-  margin-right: 2em;
-  text-align: center;
-  font-size: 30px;
-  display: flex;
-}
-
-.latest-service-card {
-  margin: 10px;
-  width: 31%;
-  background: #efeff5(1, 1, 1, 0.5);
-  color: black;
-
-  margin-bottom: 50px;
-  transition: 0.3s;
-  border-radius: 0.5em;
-  /* object-fit: fill; */
-}
-.latest-service-card-header {
-  text-align: center;
-  padding: 50px 10px;
-}
-.latest-service-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 40px #d8d3d1;
-}
-.latest-service-description {
-  padding: 30px 20px;
-  text-align: left;
-  font-size: 13px;
-}
-
-@media screen and (max-width: 620px) {
-  .latest-service-container {
-    width: 100%;
-  }
-  .latest-service-card {
-    width: 80%;
-  }
-  .latest-service-heading {
-    padding: 20px;
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 1000px) {
-  .latest-service-card {
-    width: 40%;
-  }
+#homeimg {
+  height: 500px;
+  width: 1100px;
+  margin-top: 30px;
+  margin-left: 62px;
+  border: solid 2px black;
 }
 
 /* footer*/
 .footer-dark {
   padding: 5px 0;
-  color: #f0f9ff;
+  color: white;
   background-color: black;
+  width: 1170.5px;
+  margin-left: 22.5px;
 }
 
 .footer-dark h3 {
@@ -273,8 +102,235 @@ button:hover {
   font-size: 13px;
   margin-bottom: 0;
 }
-/*dgasjkgdjasg*/
+/* this is for nav bar */
 
-/* .lower {
-  margin-top: 200px;
-} */
+* {
+  margin: 0;
+  padding: 0;
+}
+.box {
+  margin-top: 0px;
+  padding-bottom: 5px;
+  background-color: white !important;
+}
+
+button {
+  font-family: "Open+Sans", sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  color: black;
+  text-decoration: none;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px;
+}
+.together {
+  display: flex;
+  justify-content: space-between;
+}
+.cta {
+  margin: 0px;
+}
+#logo {
+  padding-top: 20px;
+  cursor: pointer;
+  max-width: 300px;
+  max-height: 150px;
+}
+
+#leftbutton {
+  margin-left: 20px;
+}
+
+#homebutton {
+  margin-left: 40px;
+  margin-right: 50px;
+}
+
+#homebutton {
+  background-color: black;
+  transition: 0.5;
+  color: white;
+  border-radius: 0.5em;
+}
+
+button {
+  padding: 8px;
+  background-color: white;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0, 3s ease 0s;
+}
+button:hover {
+  background-color: black;
+  transition: 0.5;
+  color: white;
+  border-radius: 0.5em;
+}
+
+/* ********************* */
+
+.back {
+  background-color: #efeff5;
+}
+
+#welcometitle {
+  text-align: center;
+}
+
+.container {
+  margin: 0px;
+  max-width: 100%;
+  max-height: 800px;
+  background-color: black !important;
+  position: relative;
+  display: block;
+  transition: 0.1s !important;
+}
+
+.segment {
+  background-color: white !important;
+  border: 15px solid white !important;
+  margin-top: 5px;
+}
+
+.details {
+  background-color: yellow !important;
+  color: black;
+
+  width: 200px;
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 700px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+.welcomeimg {
+  width: 1200px !important;
+  height: 480px !important;
+}
+
+#wlmbtn {
+  margin-right: 170px;
+}
+.carousel-caption {
+  margin-right: 170px;
+}
+
+/* latest product component css  */
+
+#latest-product-card-container {
+  display: flex;
+  margin-top: 50px;
+  text-align: center;
+}
+#lptitle {
+  text-align: center;
+  margin-top: 390px;
+}
+
+.latest-product-card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(210, 224, 11, 0.2);
+  transition: 0.3s;
+  text-align: center;
+  background-color: #efeff5;
+  width: 30%;
+  height: 390px;
+
+  margin-left: 2.9rem;
+  margin-top: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 0.5em;
+}
+
+/* On mouse-over, add a deeper shadow */
+.latest-product-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.latest-product-container {
+  padding: 2px 16px;
+  margin-top: 50px;
+}
+.latest-product-img {
+  width: 100%;
+  height: 12vw;
+  object-fit: contain;
+}
+#latest-product-img {
+  width: 100%;
+  height: 5 0%;
+}
+
+/* latest service component css */
+.latest-service-img {
+  max-width: 200px;
+  max-height: 500px;
+}
+.latest-service-container {
+  width: 85em;
+  margin: 1em;
+  text-align: center;
+  margin-top: 250px;
+}
+.latest-service-heading {
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+}
+
+.latest-service-card {
+  margin: 10px;
+  width: 31%;
+  background: #efeff5(1, 1, 1, 0.5);
+  color: black;
+
+  margin-bottom: 50px;
+  transition: 0.3s;
+  border-radius: 0.5em;
+  /* object-fit: fill; */
+}
+.latest-service-card-header {
+  text-align: center;
+  padding: 50px 10px;
+  height: 550px;
+}
+.latest-service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #d8d3d1;
+}
+.latest-service-description {
+  padding: 30px 20px;
+  text-align: left;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 620px) {
+  .latest-service-container {
+    width: 100%;
+  }
+  .latest-service-card {
+    width: 80%;
+  }
+  .latest-service-heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .latest-service-card {
+    width: 40%;
+  }
+}
