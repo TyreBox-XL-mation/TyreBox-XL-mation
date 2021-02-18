@@ -38,6 +38,14 @@ CREATE TABLE ourservices (
   description varchar(400) NOT NULL,  
   PRIMARY KEY (ID)
 );
+ 
+
+CREATE TABLE adminlog (
+  id int NOT NULL AUTO_INCREMENT,
+  username varchar(250) NOT NULL,
+  password varchar(250) NOT NULL,
+  PRIMARY KEY (ID)
+);
 
 -- tyre table 
 INSERT INTO tyre ( type, width, diameter, height) VALUES 
