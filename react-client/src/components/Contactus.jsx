@@ -23,14 +23,14 @@ class Contactus extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        axios.post('/contact', this.state)
+        axios.post('/tyrebox/contact', this.state)
             .then((response) => {
                 console.log(response)
             })
             .catch((error) => {
                 console.log(error)
             })
-        console.log(this.state)
+
     }
 
     render() {

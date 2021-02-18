@@ -2,14 +2,16 @@ import React from "react";
 import Home from "./components/Home.jsx";
 import Ourbrands from "./components/Ourbrands.jsx";
 import Contactus from "./components/Contactus.jsx";
-
+import axios from 'axios'
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       view: "home",
+
     };
     this.changeView = this.changeView.bind(this);
+
   }
 
   //!show pages function
@@ -18,6 +20,7 @@ class App extends React.Component {
       view: option,
     });
   }
+
 
   //! The render view funstion
   renderView() {

@@ -1,16 +1,20 @@
 import React from "react";
-//importing fake data from L-P-fakedata.js'
-import lp from "../../../L-P-fakedata.js";
+
+
 
 class Latestproduct extends React.Component {
     constructor(props) {
         super(props);
 
+
     }
 
 
 
-    
+
+
+
+
 
     render() {
         //rendering and mapping  the cards
@@ -19,15 +23,15 @@ class Latestproduct extends React.Component {
                 <h1 id='lptitle'>Latest product</h1>
                 <div id="latest-product-card-container">
 
-                    {lp.map((element, index) => (
+                    {this.props.latestproduct.map((tyre, index) => (
 
                         <div key={index} className="latest-product-card">
-                            <img src={element.image} id="latest-product-img" />
+                            <img src={tyre.image} id="latest-product-img" />
                             <div className="latest-product-container">
                                 <h4>
-                                    <b>{element.reference}</b>
+                                    <b>{tyre.reference}</b>
                                 </h4>
-                                <h3 >{element.price}</h3>
+                                <h3 >{tyre.price}</h3>
                             </div>
                         </div>
                     ))}
