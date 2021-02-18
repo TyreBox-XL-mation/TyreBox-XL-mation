@@ -1,0 +1,162 @@
+.back {
+  background-color: yellow;
+}
+
+.container {
+  max-width: 100%;
+  max-height: 800px;
+  background-color: black !important;
+  position: relative;
+  display: block;
+  transition: 0.1s !important;
+}
+
+.segment {
+  background-color: yellow !important;
+  border: 20px solid yellow !important;
+
+}
+.details {
+  background-color: yellow !important;
+  color: black;
+
+  width: 200px;
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 700px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/* latest product component css  */
+
+#latest-product-card-container {
+  display: flex;
+}
+
+.latest-product-card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(210, 224, 11, 0.2);
+  transition: 0.3s;
+  text-align: center;
+  background-color:yellow;
+  width: 40%;
+  
+  margin-left: 4.9rem;
+  margin-top: 3rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 0.5em
+}
+
+/* On mouse-over, add a deeper shadow */
+.latest-product-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.latest-product-container {
+  padding: 2px 16px;
+}
+.latest-product-img {
+  width: 100%;
+  height: 12vw;
+  object-fit: contain;
+
+}
+
+/* latest service component css */
+.latest-service-img {
+  max-width: 100%;
+  max-height: 240px;
+}
+.latest-service-container {
+  width: 85em;
+  margin: 1em;
+  text-align: center;
+  
+}
+.latest-service-heading {
+  margin-left: 2em;
+  margin-right: 2em;
+  text-align: center;
+  font-size: 30px;
+  display: flex;
+}
+
+.latest-service-card {
+  margin: 10px;
+  width: 31%;
+  background:#efeff5(1,1,1,0.5);
+  color : black;
+  
+
+  margin-bottom: 50px;
+  transition: 0.3s;
+  border-radius: 0.5em;
+  /* object-fit: fill; */
+}
+.latest-service-card-header {
+  text-align: center;
+  padding: 50px 10px;
+  
+}
+.latest-service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.25);
+}
+.latest-service-description {
+  padding: 30px 20px;
+  text-align: left;
+  font-size: 13px;
+}
+
+@media screen and (max-width: 620px) {
+  .latest-service-container {
+    width: 100%;
+  }
+  .latest-service-card {
+    width: 80%;
+  }
+  .latest-service-heading {
+    padding: 20px;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .latest-service-card {
+    width: 40%;
+  }
+}
+.back {
+  background-color: #efeff5;
+}
+
+.container {
+  max-width: 100%;
+  max-height: 800px;
+  background-color: #efeff5;
+  position: relative;
+  display: block;
+  transition: 0.1s !important;
+}
+
+.segment {
+  background-color: #efeff5;
+  border: 20px solid #efeff5;
+}
+.details {
+  background-color:#efeff5;
+  color: black;
+
+  width: 200px;
+  height: 50px;
+  margin-top: 50px;
+  margin-left: 700px;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+}
