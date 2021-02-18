@@ -134,7 +134,7 @@ class Welcome extends React.Component {
                   <ul>
                     <li>
                       <a
-                        onClick="location.href='https://github.com/TyreBox-XL-mation/TyreBox-XL-mation'"
+
                         href="https://github.com/TyreBox-XL-mation/TyreBox-XL-mation"
                       >
                         Tyre-Box

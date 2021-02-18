@@ -8,6 +8,10 @@ class Latestproduct extends React.Component {
 
     }
 
+
+
+    
+
     render() {
         //rendering and mapping  the cards
         return (

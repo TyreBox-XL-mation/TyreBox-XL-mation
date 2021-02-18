@@ -1,6 +1,7 @@
 import React from "react";
 import Home from "./components/Home.jsx";
 import Ourbrands from "./components/Ourbrands.jsx";
+import Contactus from "./components/Contactus.jsx";
 
 class App extends React.Component {
   constructor(props) {
@@ -37,18 +38,18 @@ class App extends React.Component {
       <div>
         <header className="box">
           <div className="boximg">
-            <img id="logo" src="logo/logo.png"></img>
+            <img onClick={() => this.changeView("home")} id="logo" src="logo/logo.png"></img>
           </div>
           <div className="together">
             <a className="cta" href="#">
-              <button>CONTACT US</button>
+              <button onClick={() => this.changeView("contactus")} >CONTACT US</button>
             </a>
 
             <a className="cta" href="#">
-              <button id="leftbutton">OUR BRANDS</button>
+              <button id="leftbutton" onClick={() => this.changeView("ourbrands")}>OUR BRANDS</button>
             </a>
             <a className="cta" href="#">
-              <button id="homebutton">HOME</button>
+              <button onClick={() => this.changeView("home")} id="homebutton">HOME</button>
             </a>
           </div>
 
