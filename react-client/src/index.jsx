@@ -37,16 +37,7 @@ class App extends React.Component {
           <div className="boximg">
             <img id="logo" src="logo/logo.png"></img>
           </div>
-          {/* <nav>
-            <ul className="nav__links">
-              <li>
-                <a href="#">Our brands</a>
-              </li>
-              <li>
-                <a href="#">our</a>
-              </li>
-            </ul>
-          </nav> */}
+
           <div className="together">
             <a className="cta" href="#">
               <button>CONTACT US</button>

@@ -41,16 +41,6 @@ header {
 #leftbutton {
   margin-left: 20px;
 }
-/* .nav__links li {
-  display: inline-block;
-  padding: 0px 20px;
-}
-.nav__links li a {
-  transition: all 0, 3s ease 0s;
-}
-.nav__links li a:hover {
-  color: rgb(235, 231, 38);
-} */
 
 button {
   padding: 8px;
