@@ -31,7 +31,7 @@ class Latestproduct extends React.Component {
                                 <h4>
                                     <b>{tyre.reference}</b>
                                 </h4>
-                                <h3 >{tyre.price}</h3>
+                                <h3 >{tyre.price} T.N.D</h3>
                             </div>
                         </div>
                     ))}

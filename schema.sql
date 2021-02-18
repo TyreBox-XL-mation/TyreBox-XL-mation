@@ -91,3 +91,5 @@ INSERT INTO ourservices ( image, servicename, description) VALUES
 
 -- mysql -u root -p schema.sql
 
+INSERT INTO tyre ( type, width, diameter, height) VALUES 
+('Amine', 205, 55 , 16 );

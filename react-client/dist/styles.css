@@ -176,6 +176,26 @@ button:hover {
 
 }
 
+/* ***************** drop dwon search ********************* */
+
+.dropdownbtn{
+  margin-top: 100px;
+  
+}
+#seachtitle{
+  text-align: center;
+  margin-bottom:50px;
+}
+.form-select{
+  height:5rem;
+  cursor: pointer;
+  margin-left:12rem ;
+}
+
+#buttonsearch{
+  margin-left:3rem ;
+}
+
 /* **************** contact and brands*********** */
 
 
@@ -424,7 +444,7 @@ text-align: center;
 }
 #lptitle{
   text-align: center;
-  margin-top:390px;
+  margin-top:90px;
 }
 
 

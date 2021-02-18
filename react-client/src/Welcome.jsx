@@ -13,6 +13,7 @@ class Welcome extends React.Component {
   handleClick() {
     this.setState({ view: true });
   }
+  
   render() {
     return (
       <div>
