@@ -35,7 +35,7 @@ CREATE TABLE ourservices (
   id int NOT NULL AUTO_INCREMENT,
   image varchar(250) NOT NULL,
   servicename varchar(250) NOT NULL,
-  description varchar(400) NOT NULL,  
+  description varchar(1400) NOT NULL,  
   PRIMARY KEY (ID)
 );
  
@@ -58,6 +58,15 @@ INSERT INTO tyre ( type, width, diameter, height) VALUES
 ('Bridgestone', 205, 58 , 19 );
 
 
+
+INSERT INTO contact ( name, mobile, email, message) VALUES 
+('Alaa', 21189897, 'alaa@gmail.com' , 'Interested in Bridgestone' );
+
+INSERT INTO contact ( name, mobile, email, message) VALUES 
+('Ines', 21492968, 'piazzese.ines@gmail.com' , 'Interested in Goodyear' );
+
+INSERT INTO contact ( name, mobile, email, message) VALUES 
+('Ramzi', 21378468, 'ramzus.best@gmail.com' , 'Interested in Amine' );
 
 INSERT INTO contact ( name, mobile, email, message) VALUES 
 ('Alaa', 21189897, 'alaa@gmail.com' , 'Interested in Bridgestone' );
@@ -95,5 +104,7 @@ INSERT INTO ourservices ( image, servicename, description) VALUES
 
 INSERT INTO ourservices ( image, servicename, description) VALUES 
 ('https://www.laws-tyres.com/assets/974592d48f93f9ea10af0499f10bd8e4_nitrogen-tyres.jpg', 'Nitrogen Filling', 'The normal air that you fill in your tyres consists of 78% nitrogen, 21% oxygen and 1% other gases and water. When you fill your tyre with nitrogen the pressure inside the tyre remains stable. This is because the nitrogen molecule is larger than the others, it doesn’t seep out of your tyre quickly.');
+
+-- mysql -u root -p schema.sql
 
 -- mysql -u root -p schema.sql

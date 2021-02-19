@@ -1,14 +1,17 @@
 import React from "react";
 import Home from "./components/Home.jsx";
 import Ourbrands from "./components/Ourbrands.jsx";
-
+import Contactus from "./components/Contactus.jsx";
+import Admin from "./components/Admin.jsx";
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       view: "home",
+      isLogged: false,
     };
     this.changeView = this.changeView.bind(this);
+    // this.loggedIn = this.loggedIn.bind(this);
   }
 
   //!show pages function
@@ -17,6 +20,10 @@ class App extends React.Component {
       view: option,
     });
   }
+  // loggedIn(e) {
+  //   e.preventDefault();
+  //   this.setState({ isLogged: true });
+  // }
 
   //! The render view funstion
   renderView() {
@@ -32,38 +39,47 @@ class App extends React.Component {
 
   render() {
     return (
-
       <div>
         <header className="box">
           <div className="boximg">
-            <img id="logo" src="logo/logo.png"></img>
+            <img
+              onClick={() => this.changeView("home")}
+              id="logo"
+              src="logo/logo.png"
+            ></img>
           </div>
           <div className="together">
             <a className="cta" href="#">
-              <button>CONTACT US</button>
+              <button onClick={() => this.changeView("contactus")}>
+                CONTACT US
+              </button>
             </a>
 
             <a className="cta" href="#">
-              <button id="leftbutton">OUR BRANDS</button>
+              <button
+                id="leftbutton"
+                onClick={() => this.changeView("ourbrands")}
+              >
+                OUR BRANDS
+              </button>
             </a>
             <a className="cta" href="#">
-              <button id="homebutton">HOME</button>
+              <button onClick={() => this.changeView("home")} id="homebutton">
+                HOME
+              </button>
             </a>
           </div>
-
         </header>
+        )
+        <Admin />
         <div className="main">{this.renderView()}</div>
+        {/* <h1 onClick={(e) => this.loggedIn(e)}>inessdhkgd</h1> */}
       </div>
-
-
     );
   }
 }
 
 export default App;
-
-
-
 
 // <div>
 // <nav>
