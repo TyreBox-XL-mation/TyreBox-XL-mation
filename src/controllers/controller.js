@@ -45,3 +45,16 @@ module.exports.postContact = (req, res) => {
     });
   });
 };
+
+module.exports.getContact = (req, res) => {
+  return new Promise((resolve, reject) => {
+    const query = "SELECT * FROM contact";
+    connection.query(query, (err, result) => {
+      if (err) {
+        reject(res.send(err));
+      } else {
+        resolve(res.send(result));
+      }
+    });
+  });
+};

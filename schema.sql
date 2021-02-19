@@ -50,6 +50,9 @@ INSERT INTO tyre ( type, width, diameter, height) VALUES
 INSERT INTO tyre ( type, width, diameter, height) VALUES 
 ('Bridgestone', 205, 58 , 19 );
 
+INSERT INTO tyre ( type, width, diameter, height) VALUES 
+('Amine', 205, 55 , 16 );
+
 
 
 INSERT INTO contact ( name, mobile, email, message) VALUES 
@@ -91,5 +94,3 @@ INSERT INTO ourservices ( image, servicename, description) VALUES
 
 -- mysql -u root -p schema.sql
 
-INSERT INTO tyre ( type, width, diameter, height) VALUES 
-('Amine', 205, 55 , 16 );

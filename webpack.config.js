@@ -3,7 +3,8 @@ var SRC_DIR = path.join(__dirname, "/react-client/src");
 var DIST_DIR = path.join(__dirname, "/react-client/dist");
 
 module.exports = {
-  entry: `${SRC_DIR}/Welcome.jsx`,
+  entry: [`${SRC_DIR}/Welcome.jsx`, `${SRC_DIR}/Signupadmin.jsx`],
+
   output: {
     filename: "bundle.js",
     path: DIST_DIR,

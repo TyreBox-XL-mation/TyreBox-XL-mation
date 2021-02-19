@@ -1,23 +1,48 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./index.jsx";
+import Signupadmin from "./Signupadmin.jsx"
+import Admin from "./components/Admin.jsx"
+
+
 
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: false,
+      view: 'welcome',
+      test: "user",
+
     };
+    this.changeView = this.changeView.bind(this);
+
   }
 
-  handleClick() {
-    this.setState({ view: true });
+  changeView(option) {
+    this.setState({
+      view: option,
+    });
   }
-  
+
+
+  renderView() {
+    const { view } = this.state;
+    if (view === "home") {
+      return <Home />;
+    } else if (view === "ourbrands") {
+      return <Ourbrands />;
+    } else {
+      return <Contactus />;
+    }
+
+  }
+
+
   render() {
+
     return (
       <div>
-        {!this.state.view ? (
+        {this.state.view === 'welcome' ? (
           <div className=" segment">
 
             <div className="container">
@@ -48,7 +73,7 @@ class Welcome extends React.Component {
                         type="button"
                         id='wlmbtn'
                         className="btn btn-warning details"
-                        onClick={this.handleClick.bind(this)} >
+                        onClick={() => this.changeView("home")} >
                         Know more
                       </button>
                       {/* <h3>Quality</h3>
@@ -67,7 +92,7 @@ class Welcome extends React.Component {
                       <button
                         type="button"
                         className="btn btn-warning details"
-                        onClick={this.handleClick.bind(this)}
+                        onClick={() => this.changeView("home")}
                       >
                         Know more
                       </button>
@@ -86,7 +111,7 @@ class Welcome extends React.Component {
                       <button
                         type="button"
                         className="btn btn-warning details"
-                        onClick={this.handleClick.bind(this)}
+                        onClick={() => this.changeView("home")}
                       >
                         Know more
                       </button>
@@ -115,9 +140,15 @@ class Welcome extends React.Component {
               </div>
             </div>
           </div>
+        ) : this.state.view === "home" ? (
+          <App />
+        ) : this.state.view === "admin" ? (
+          <Signupadmin />
         ) : (
-            <App />
-          )}
+                <Admin />
+              )
+
+        }
         <div className="footer-dark">
           <footer>
             <div className="container">
@@ -126,12 +157,13 @@ class Welcome extends React.Component {
                   <h3>Services</h3>
                   <ul>
                     <li>
-                      <a href="#">Click here</a>
+                      <a onClick={() => this.changeView("home")} href="#">Click here</a>
                     </li>
                   </ul>
                 </div>
                 <div className="col-sm-6 col-md-3 item">
                   <h3>About</h3>
+                  <a id='adminbtn' onClick={() => this.changeView("admin")}>Admin</a>
                   <ul>
                     <li>
                       <a
@@ -177,6 +209,11 @@ class Welcome extends React.Component {
     );
 
   }
+
 }
 
+
+
 ReactDOM.render(<Welcome />, document.getElementById("app"));
+
+
