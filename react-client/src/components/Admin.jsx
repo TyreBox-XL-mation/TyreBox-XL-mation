@@ -3,6 +3,7 @@ import axios from "axios";
 import AddService from "./AddService.jsx";
 import AddProduct from "./Addproduct.jsx";
 import PreAdmin from "./PreAdmin.jsx";
+import Home from "./Home.jsx";
 export class Admin extends Component {
   constructor(props) {
     super(props);
@@ -25,7 +26,7 @@ export class Admin extends Component {
         <header className="box">
           <div className="boximg">
             <img
-              onClick={() => this.changeView("home")}
+              onClick={() => this.changeView("preAdmin")}
               id="logo"
               src="logo/logo.png"
             ></img>

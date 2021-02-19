@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import swal from "sweetalert";
 class AddService extends React.Component {
   constructor(props) {
     super(props);
@@ -21,9 +22,9 @@ class AddService extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("/tyrebox/ourservices", this.state)
+      .post("/tyrebox/adminservice", this.state)
       .then((response) => {
-        console.log(response);
+        swal("Service added!", "Congrats dear admin!", "success");
       })
       .catch((error) => {
         console.log(error);
@@ -35,7 +36,7 @@ class AddService extends React.Component {
       <div className="add-container">
         <div className="add-body">
           <div id="add-form">
-            <h3 className="add-h3">add service</h3>
+            <h3 className="add-h3">Add service</h3>
 
             <form id="add-form-id" className="add-form-className">
               <div className="add-form-group">
@@ -93,7 +94,7 @@ class AddService extends React.Component {
                   onClick={this.handleSubmit}
                   className="add-btn add-btn-primary add-btn-lg add-btn-block"
                 >
-                  add
+                  ADD SERVICE
                 </button>
               </div>
             </form>

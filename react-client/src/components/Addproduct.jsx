@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import swal from "sweetalert";
+
 class AddProduct extends React.Component {
   constructor(props) {
     super(props);
@@ -21,9 +23,9 @@ class AddProduct extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     axios
-      .post("/tyrebox/latestproduct", this.state)
+      .post("/tyrebox/adminproduct", this.state)
       .then((response) => {
-        console.log(response);
+        swal("Product added!", "Congrats dear admin!", "success");
       })
       .catch((error) => {
         console.log(error);
@@ -35,7 +37,7 @@ class AddProduct extends React.Component {
       <div className="add-container">
         <div className="add-body">
           <div id="add-form">
-            <h3 className="add-h3">add product</h3>
+            <h3 className="add-h3">Add product</h3>
 
             <form id="add-form-id" className="add-form-className">
               <div className="add-form-group">
@@ -90,7 +92,9 @@ class AddProduct extends React.Component {
                   id="add-button"
                   onClick={this.handleSubmit}
                   className="add-btn add-btn-primary add-btn-lg add-btn-block"
-                ></button>
+                >
+                  ADD PRODUCT
+                </button>
               </div>
             </form>
           </div>
