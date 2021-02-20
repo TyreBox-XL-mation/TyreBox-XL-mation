@@ -157,7 +157,7 @@ module.exports.logIn = (req, res) => {
       var checked = bcrypt.compareSync(
         `${req.body.password}`,
         result[0].password
-      );it
+      );
       if (!checked) {
         res.end("Incorrect password");
         return;

@@ -24,12 +24,17 @@ export default class Signup extends Component {
         );
     }
     signUp() {
-        let pass = bcrypt.hashSync(this.state.password, 8);
-        console.log(pass);
-        axios.post("/tyrebox/signup", {
-            username: this.state.username,
-            email: this.state.email,
-            password: pass,
+        bcrypt.hash(this.state.password, 8, (err, result) => {
+            if (err) {
+
+                console.log(err)
+            }
+            console.log(result);
+            axios.post("/tyrebox/signup", {
+                username: this.state.username,
+                email: this.state.email,
+                password: result,
+            });
         });
     }
 
