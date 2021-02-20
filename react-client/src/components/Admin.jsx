@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from "react";
+import axios from "axios";
 import AddService from "./AddService.jsx";
 import AddProduct from "./Addproduct.jsx";
 import PreAdmin from "./PreAdmin.jsx";
-
-
-class Admin extends React.Component {
+import Home from "./Home.jsx";
+export class Admin extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -21,13 +21,12 @@ class Admin extends React.Component {
     }
 
     render() {
-        console.log(this.props.login)
         return (
             <div>
                 <header className="box">
                     <div className="boximg">
                         <img
-                            onClick={() => this.changeView("home")}
+                            onClick={() => this.changeView("preAdmin")}
                             id="logo"
                             src="logo/logo.png"
                         ></img>

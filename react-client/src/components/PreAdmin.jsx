@@ -51,6 +51,34 @@ export class PreAdmin extends Component {
                 console.log(error);
             });
     }
+
+    handleDelete(id) {
+        axios.delete(`/tyrebox/${id}`).then((response) => {
+            const newData = this.state.latestproduct.filter((product) => {
+                return id !== product.id;
+            });
+            this.setState({ latestproduct: newData });
+        });
+    }
+
+    handleDeleteService(id) {
+        axios.delete(`/tyrebox/${id}`).then((response) => {
+            const newData = this.state.ourservices.filter((service) => {
+                return id !== service.id;
+            });
+            this.setState({ ourservices: newData });
+        });
+    }
+
+    handleDeleteContact(id) {
+        axios.delete(`/tyrebox/${id}`).then((response) => {
+            const newData = this.state.contact.filter((contact) => {
+                return id !== contact.id;
+            });
+            this.setState({ contact: newData });
+        });
+    }
+
     render() {
         return (
             <div>
@@ -67,7 +95,7 @@ export class PreAdmin extends Component {
                 <div className="first">
                     <div id="latest-product-card-container">
                         {this.state.latestproduct.map((tyre, index) => (
-                            <div key={index} className="latest-product-card">
+                            <div key={index} id={tyre.id} className="latest-product-card">
                                 <img src={tyre.image} id="latest-product-img" />
                                 <div className="latest-product-container">
                                     <h4>
@@ -79,6 +107,7 @@ export class PreAdmin extends Component {
                                     id="deleteproduct"
                                     type="button"
                                     className="btn btn-dark"
+                                    onClick={() => this.handleDelete.bind(this)(tyre.id)}
                                 >
                                     DELETE
                 </button>
@@ -104,6 +133,9 @@ export class PreAdmin extends Component {
                                     id="deleteproduct"
                                     type="button"
                                     className="btn btn-dark"
+                                    onClick={() =>
+                                        this.handleDeleteService.bind(this)(service.id)
+                                    }
                                 >
                                     DELETE
                 </button>
@@ -125,7 +157,12 @@ export class PreAdmin extends Component {
                                 <h3>message:</h3>
                                 <p>{info.message}</p>
                             </div>
-                            <button id="deleteproduct" type="button" className="btn btn-dark">
+                            <button
+                                id="deleteproduct"
+                                type="button"
+                                className="btn btn-dark"
+                                onClick={() => this.handleDeleteContact.bind(this)(info.id)}
+                            >
                                 DELETE
               </button>
                         </div>

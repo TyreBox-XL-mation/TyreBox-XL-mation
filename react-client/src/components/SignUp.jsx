@@ -1,6 +1,37 @@
 import React, { Component } from "react";
-
+import bcrypt from "bcryptjs";
+import axios from "axios";
 export default class Signup extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            username: "",
+            email: "",
+            password: "",
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.signUp = this.signUp.bind(this);
+    }
+
+    handleChange(e) {
+        this.setState(
+            {
+                [e.target.name]: e.target.value,
+            },
+            () => {
+                console.log(this.state);
+            }
+        );
+    }
+    signUp() {
+        let pass = bcrypt.hashSync(this.state.password, 8);
+        console.log(pass);
+        axios.post("/tyrebox/signup", {
+            username: this.state.username,
+            email: this.state.email,
+            password: pass,
+        });
+    }
 
     render() {
         return (
@@ -22,6 +53,7 @@ export default class Signup extends Component {
                                 name="username"
                                 className="log-input"
                                 placeholder="username"
+                                onChange={this.handleChange}
                             />
                         </div>
                         <div className="log-form-group">
@@ -33,6 +65,7 @@ export default class Signup extends Component {
                                 name="email"
                                 className="log-input"
                                 placeholder="email"
+                                onChange={this.handleChange}
                             />
                         </div>
                         <div className="log-form-group">
@@ -44,12 +77,13 @@ export default class Signup extends Component {
                                 name="password"
                                 className="log-input"
                                 placeholder="password"
+                                onChange={this.handleChange}
                             />
                         </div>
                     </div>
                 </div>
                 <div className="log-footer">
-                    <button type="button" className="log-btn">
+                    <button type="button" className="log-btn" onClick={this.signUp}>
                         Sign Up
           </button>
                 </div>
