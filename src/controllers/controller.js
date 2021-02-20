@@ -143,18 +143,27 @@ module.exports.addAdmin = (req, res) => {
 };
 module.exports.logIn = (req, res) => {
   var query = `SELECT password FROM admin_log WHERE username ="${req.body.username}" `;
-  console.log("this is password: ", req.body.password);
+  console.log("this is password: ", req.body.username);
   connection.query(query, (err, result) => {
-    console.log(result);
     if (err) {
+      console.log("user is not found");
       res.send(err);
     } else {
+      if (result[0] === undefined) {
+        console.log("its not found");
+        res.end("Username is not found");
+        return;
+      }
       var checked = bcrypt.compareSync(
         `${req.body.password}`,
         result[0].password
-      );
-      console.log(checked);
-      res.send(checked);
+      );it
+      if (!checked) {
+        res.end("Incorrect password");
+        return;
+      } else {
+        res.send(checked);
+      }
     }
   });
 };
