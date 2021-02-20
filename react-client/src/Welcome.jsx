@@ -1,21 +1,23 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./index.jsx";
-import Signupadmin from "./Signupadmin.jsx"
-import Admin from "./components/Admin.jsx"
-
-
+import Signupadmin from "./Signupadmin.jsx";
+import Admin from "./components/Admin.jsx";
+import axios from "axios";
 
 class Welcome extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      view: 'welcome',
+      view: "welcome",
       test: "user",
-
+      isLoggedIn: true,
     };
     this.changeView = this.changeView.bind(this);
-
+    this.userIsAuth = this.userIsAuth.bind(this);
+  }
+  componentDidMount() {
+    this.userIsAuth();
   }
 
   changeView(option) {
@@ -23,7 +25,6 @@ class Welcome extends React.Component {
       view: option,
     });
   }
-
 
   renderView() {
     const { view } = this.state;
@@ -34,17 +35,24 @@ class Welcome extends React.Component {
     } else {
       return <Contactus />;
     }
-
+  }
+  userIsAuth() {
+    axios
+      .get("/tyrebox/isUserAuth", {
+        headers: {
+          "x-access-token": localStorage.getItem("token"),
+        },
+      })
+      .then((response) => {
+        this.setState({ isLoggedIn: response.data.auth });
+      });
   }
 
-
   render() {
-
     return (
       <div>
-        {this.state.view === 'welcome' ? (
+        {this.state.view === "welcome" ? (
           <div className=" segment">
-
             <div className="container">
               <div
                 id="myCarousel"
@@ -64,16 +72,17 @@ class Welcome extends React.Component {
                 <div className="carousel-inner">
                   <div className="item active">
                     <img
-                      className='welcomeimg'
+                      className="welcomeimg"
                       src="https://content.mosaiquefm.net/uploads/content/thumbnails/goodyear_un_concept_unique_lance_par_parenin_1563205674.jpg"
                       alt="Los Angeles"
                     />
                     <div className="carousel-caption">
                       <button
                         type="button"
-                        id='wlmbtn'
+                        id="wlmbtn"
                         className="btn btn-warning details"
-                        onClick={() => this.changeView("home")} >
+                        onClick={() => this.changeView("home")}
+                      >
                         Know more
                       </button>
                       {/* <h3>Quality</h3>
@@ -81,10 +90,9 @@ class Welcome extends React.Component {
                     </div>
                   </div>
 
-
                   <div className="item">
                     <img
-                      className='welcomeimg'
+                      className="welcomeimg"
                       src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
                       alt="Chicago"
                     />
@@ -103,7 +111,7 @@ class Welcome extends React.Component {
 
                   <div className="item">
                     <img
-                      className='welcomeimg'
+                      className="welcomeimg"
                       src="https://fl-discounttyres-media.s3.amazonaws.com/uploads/2018/10/goodyear-assurance-triplemax-2.png"
                       alt="New York"
                     ></img>
@@ -145,10 +153,8 @@ class Welcome extends React.Component {
         ) : this.state.view === "admin" ? (
           <Signupadmin />
         ) : (
-                <Admin />
-              )
-
-        }
+          <Admin />
+        )}
         <div className="footer-dark">
           <footer>
             <div className="container">
@@ -157,19 +163,20 @@ class Welcome extends React.Component {
                   <h3>Services</h3>
                   <ul>
                     <li>
-                      <a onClick={() => this.changeView("home")} href="#">Click here</a>
+                      <a onClick={() => this.changeView("home")} href="#">
+                        Click here
+                      </a>
                     </li>
                   </ul>
                 </div>
                 <div className="col-sm-6 col-md-3 item">
                   <h3>About</h3>
-                  <a id='adminbtn' onClick={() => this.changeView("admin")}>Admin</a>
+                  <a id="adminbtn" onClick={() => this.changeView("admin")}>
+                    Admin
+                  </a>
                   <ul>
                     <li>
-                      <a
-
-                        href="https://github.com/TyreBox-XL-mation/TyreBox-XL-mation"
-                      >
+                      <a href="https://github.com/TyreBox-XL-mation/TyreBox-XL-mation">
                         Tyre-Box
                       </a>
                     </li>
@@ -204,16 +211,9 @@ class Welcome extends React.Component {
             </div>
           </footer>
         </div>
-
       </div>
     );
-
   }
-
 }
 
-
-
 ReactDOM.render(<Welcome />, document.getElementById("app"));
-
-
