@@ -11,7 +11,7 @@ export default class Login extends React.Component {
 
 
     render() {
-
+        console.log(this.props.loggedin);
         return (
             <div className="log-container" ref={this.props.containerRef}>
                 <div className="log-content">
@@ -47,7 +47,7 @@ export default class Login extends React.Component {
                     </div>
                 </div>
                 <div className="log-footer">
-                    <button type="button" className="log-btn">
+                    <button onClick={this.props.loggedin} type="button" className="log-btn">
                         Login
             </button>
                 </div>

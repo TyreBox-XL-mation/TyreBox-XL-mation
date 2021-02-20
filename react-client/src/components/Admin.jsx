@@ -21,7 +21,7 @@ class Admin extends React.Component {
     }
 
     render() {
-
+        console.log(this.props.login)
         return (
             <div>
                 <header className="box">

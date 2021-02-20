@@ -113,7 +113,7 @@ export class PreAdmin extends Component {
                 </div>
                 <h1 id="contacttitle">CLIENT CONTACTS</h1>
                 {this.state.contact.map((info, index) => (
-                    <div className="contactsize">
+                    <div className="contactsize" key={index}>
                         <div className="container p-3 my-3 bg-dark text-white">
                             <div>
                                 <h3>Name:</h3>

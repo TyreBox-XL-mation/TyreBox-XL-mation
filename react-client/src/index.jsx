@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./components/Home.jsx";
 import Ourbrands from "./components/Ourbrands.jsx";
 import Contactus from "./components/Contactus.jsx";
+import Admin from "./components/Admin.jsx";
 import axios from 'axios'
 class App extends React.Component {
   constructor(props) {
@@ -29,8 +30,10 @@ class App extends React.Component {
       return <Home />;
     } else if (view === "ourbrands") {
       return <Ourbrands />;
-    } else {
+    } else if (view === "contactus") {
       return <Contactus />;
+    } else {
+      return <Admin login='dfefe' />
     }
 
   }
