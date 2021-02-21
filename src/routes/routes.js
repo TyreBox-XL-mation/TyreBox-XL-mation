@@ -12,5 +12,6 @@ router.post("/adminservice", controller.postService);
 router.post("/adminproduct", controller.postProduct);
 router.post("/signup", controller.addAdmin);
 router.post("/login", controller.logIn);
-
+router.post("/",controller.getOneTyre)
+router.post("/",controller.postOneTyre)
 module.exports = router;
