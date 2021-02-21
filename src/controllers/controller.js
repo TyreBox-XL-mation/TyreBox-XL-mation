@@ -198,15 +198,17 @@ module.exports.verify = (req, res) => {
   // console.log(req.headers);
   // console.log("message from token", token);
   if (!token) {
-    res.send("Please give us a token!");
+    console.log("=======> here is first token", token);
+    return res.send("Please give us a token!");
   } else {
     jwt.verify(token, "secret", (err, decoded) => {
+      console.log("here is second token====>", token);
       if (err) {
-        res.json({ auth: false, message: "authentication failed" });
+        return res.json({ auth: false, message: "authentication failed" });
       } else {
         // console.log(decoded);
-        res.send("you are authenticated,congrats!");
         req.user = decoded.id;
+        return res.send("you are authenticated,congrats!");
       }
     });
   }

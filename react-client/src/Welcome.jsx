@@ -11,8 +11,8 @@ class Welcome extends React.Component {
     this.state = {
       view: "welcome",
       test: "user",
-      isLoggedIn: true,
-      currentUser: null,
+      isLoggedIn: false,
+
     };
     this.changeView = this.changeView.bind(this);
     this.userIsAuth = this.userIsAuth.bind(this);
@@ -20,14 +20,14 @@ class Welcome extends React.Component {
   }
   componentDidMount() {
     this.userIsAuth();
-    this.changeView("welcome");
+    if (localStorage.getItem("token")) {
+      this.changeView("adminpanel");
+    } else {
+      this.changeView("welcome");
+    }
   }
 
-  logout() {
-    localStorage.removeItem("token");
-    this.changeView("welcome");
-    console.log("logout")
-  }
+  
 
   changeView(option) {
     this.setState({
@@ -54,7 +54,8 @@ class Welcome extends React.Component {
       })
 
       .then((response) => {
-        this.setState({ currentUser: response.data.result });
+        console.log("======>", response);
+        this.setState({ isLoggedIn: response.data.auth });
         console.log(localStorage.getItem("token"));
       });
   }
