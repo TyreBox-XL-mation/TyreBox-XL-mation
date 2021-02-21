@@ -1,5 +1,6 @@
 import React from "react";
 function SearchResult(props) {
+    // console.log(props.product)
     return (
         <div>
             <h1 id="lptitle">here your search</h1>
@@ -16,8 +17,8 @@ function SearchResult(props) {
                                 <b>{tyre.type}</b>
                             </h3>
                             <h2>
-                                <b>{tyre.width}</b>
-                                <b>{tyre.diameter}</b>
+                                <b>{tyre.width}</b>/
+                                <b>{tyre.diameter}</b>/
                                 <b>{tyre.height}</b>
                             </h2>
                         </div>

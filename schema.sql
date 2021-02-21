@@ -54,7 +54,7 @@ INSERT INTO tyre ( type, width, diameter, height) VALUES
 ('Amine', 195, 55 , 16 );
 
 INSERT INTO tyre ( type, width, diameter, height) VALUES 
-('GoodYear', 200, 60 , 18 );
+('GoodYear', 200, 75 , 18 );
 
 INSERT INTO tyre ( type, width, diameter, height) VALUES 
 ('Bridgestone', 205, 58 , 19 );

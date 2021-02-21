@@ -44,7 +44,7 @@ class Home extends React.Component {
       <div>
         <div className='home'>
           <div className='homeimage'><img id='homeimg' src='https://autoservicekole.nl/wp-content/uploads/2017/09/wheel-2373040_1920.jpg' /></div>
-          <div ><Dropdown /></div>
+          <div ><Dropdown handelevent={this.props.handelevent} search={this.props.search} /></div>
           <div><Latestproduct latestproduct={this.state.latestproduct} /></div>
           <div><Latestservices ourservices={this.state.ourservices} /></div>
         </div>
