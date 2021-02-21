@@ -167,3 +167,29 @@ module.exports.logIn = (req, res) => {
     }
   });
 };
+module.exports.getOneTyre = (req, res) => {
+  return new Promise((resolve, reject) => {
+    const query =` SELECT * FROM tyre WHERE type ="${req.body.type}" OR  width="${req.body.width}"  OR diameter ="${req.body.diameter}" OR  height ="${req.body.height}" `  ;
+    connection.query(query, (err, result) => {
+      if (err) {
+        reject(res.send(err));
+      } else {
+        resolve(res.send(result));
+      }
+    });
+  });
+};
+module.exports.postOneTyre = (req, res) => {
+  return new Promise((resolve, reject) => {
+  var data = [req.body.type, req.body.width, req.body.diameter,req.body.height];
+
+  var query = `INSERT INTO tyre(type, width, diameter,height) VALUES ("${data[0]}","${data[1]}","${data[2]}","${data[3]}")`;
+  connection.query(query, (err, result) => {
+    if (err) {
+      reject(res.send(err));
+    } else {
+      resolve(res.send(result));
+    }
+  });
+  })
+};
