@@ -173,39 +173,41 @@ module.exports.login = (req, res) => {
   });
 };
 
-const verifyjwt = (req, res, next) => {
-  const token = req.headers["x-access-token"];
-  console.log(req.headers);
-  console.log("message from token", token);
-  if (!token) {
-    res.send("Please give us a token!");
-  } else {
-    jwt.verify(token, "secret", (err, decoded) => {
-      if (err) {
-        res.json({ auth: false, message: "authentication failed" });
-      } else {
-        console.log(req);
-        console.log(decoded);
-        // req.user = decoded.id;
-        next();
-      }
-    });
-  }
-};
+// const verifyjwt = (req, res, next) => {
+//   const token = req.headers["x-access-token"];
+//   console.log(req.headers);
+//   console.log("message from token", token);
+//   if (!token) {
+//     res.send("Please give us a token!");
+//   } else {
+//     jwt.verify(token, "secret", (err, decoded) => {
+//       if (err) {
+//         res.json({ auth: false, message: "authentication failed" });
+//       } else {
+//         console.log(req);
+//         console.log(decoded);
+//         // req.user = decoded.id;
+//         next();
+//       }
+//     });
+//   }
+// };
 module.exports.verify = (req, res) => {
-  res.send("you are authenticated,congrats!");
   const token = req.headers["x-access-token"];
   // console.log(req.headers);
   // console.log("message from token", token);
   if (!token) {
-    res.send("Please give us a token!");
+    console.log("=======> here is first token", token);
+    return res.send("Please give us a token!");
   } else {
     jwt.verify(token, "secret", (err, decoded) => {
+      console.log("here is second token====>", token);
       if (err) {
-        res.json({ auth: false, message: "authentication failed" });
+        return res.json({ auth: false, message: "authentication failed" });
       } else {
         // console.log(decoded);
         req.user = decoded.id;
+        return res.send("you are authenticated,congrats!");
       }
     });
   }

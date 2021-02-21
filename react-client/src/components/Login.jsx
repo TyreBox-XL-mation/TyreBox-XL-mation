@@ -94,10 +94,9 @@ export default class Login extends Component {
         if (response.data.auth) {
           this.changeView("connected");
 
-          this.setState({ isLoggedIn: response.data.result.username });
           console.log(response.data);
           localStorage.setItem("token", response.data.token);
-          console.log(response);
+          console.log("=======> thisislogin", response);
         } else {
           alert(response.data.message);
         }

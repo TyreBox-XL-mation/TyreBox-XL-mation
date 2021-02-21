@@ -14,6 +14,9 @@ export class Admin extends Component {
     this.changeView = this.changeView.bind(this);
   }
 
+  componentDidMount(){
+    console.log('====>admin',this.state)
+  }
   changeView(option) {
     this.setState({
       log: option,
