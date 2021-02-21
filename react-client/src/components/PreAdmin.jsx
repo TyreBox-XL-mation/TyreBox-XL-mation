@@ -88,7 +88,7 @@ export class PreAdmin extends Component {
                         src="https://logodix.com/logo/1707088.png"
                     ></img>
 
-                    <h4 id="welcomeadmin">Welcome to the Admin pannel</h4>
+                    <h4 id="welcomeadmin">Welcome  to the Admin pannel</h4>
                     <h4 id="titleadmin">Tyre-Box</h4>
                 </div>
                 <h1 id="lptitle">Latest product</h1>

@@ -13,4 +13,6 @@ router.post("/adminproduct", controller.postProduct);
 router.post("/signup", controller.signup);
 router.post("/login", controller.login);
 router.get("/isUserAuth", controller.verify);
+router.get("/", controller.getOneTyre);
+router.post("/", controller.postOneTyre);
 module.exports = router;

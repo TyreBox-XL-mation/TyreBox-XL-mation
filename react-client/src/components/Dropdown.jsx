@@ -1,5 +1,6 @@
 import React from "react";
-
+import SearchResult from "./SearchResult.jsx"
+import axios from "axios";
 // dropdown component
 class Dropdown extends React.Component {
     constructor(props) {
@@ -9,7 +10,10 @@ class Dropdown extends React.Component {
             width: "",
             diameter: "",
             height: "",
+            product: null
+
         };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     handelevent(event) {
@@ -20,12 +24,30 @@ class Dropdown extends React.Component {
         });
     }
 
-    handleClick(e) {
+    handleClick(e, option) {
         e.preventDefault();
+        axios
+            .get("/tyrebox/")
+            .then((tyres) => {
+                console.log(tyres.data)
+                var filtered = tyres.data.filter(element => {
+
+                    return ((element.type === this.state.type))
+
+
+                })
+                this.setState({
+                    product:filtred
+               })
+
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }
 
     render() {
-        console.log(this.state);
+
         return (
             <div className="dropdownbtn">
                 <h1 id="seachtitle"> Search for your favorite tyre </h1>
@@ -77,7 +99,12 @@ class Dropdown extends React.Component {
                     <option>19</option>
                 </select>
 
-                <button id="buttonsearch" type="button" className="btn btn-dark">
+                <button
+                    id="buttonsearch"
+                    type="button"
+                    onClick={this.handleClick}
+                    className="btn btn-dark"
+                >
                     Search
         </button>
             </div>
