@@ -379,8 +379,70 @@ label.contact-label {
   display: block;
   width: 100%;
 }
+/* ************ admin ppanel style *************** */
+
+.contactsize {
+  width: 30rem;
+  display: inline-flex;
+  margin-left: 8rem;
+  padding: 5px;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
+.contactsize:hover {
+  /* box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2); */
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#deleteproduct:hover {
+  background-color: white;
+}
+#addService:hover {
+  background-color: white;
+  
+}
+
+#adminsizeimage {
+  width: 60%;
+  height: 62%;
+  margin-left: 10rem;
+}
+
+#contacttitle {
+  margin-left: 45rem;
+  margin-bottom: 10rem;}
 
 /******** Login SignUp styling ********/
+
+#welcomeadmin {
+  text-align: center;
+  margin-top: 30px;
+  font-weight: bold;
+  font-size: 30px;
+}
+#titleadmin {
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 35px;
+}
+
+.margintitlesadmin {
+  margin-top: 250px;
+  border: solid 3px;
+  margin-left: 370px;
+  max-width: 500px;
+}
+
+
+#homeimg {
+  height: 500px;
+  width: 1100px;
+  margin-top: 30px;
+  margin-left: 62px;
+  border: solid 2px black;
+}
 
 .log-container {
   margin: auto;
@@ -391,6 +453,8 @@ label.contact-label {
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
   margin-bottom: 5rem;
+  margin-top: 10rem;
+  
 }
 
 .log-content {

@@ -143,12 +143,13 @@ module.exports.addAdmin = (req, res) => {
 };
 module.exports.logIn = (req, res) => {
   var query = `SELECT password FROM admin_log WHERE username ="${req.body.username}" `;
-  console.log("this is password: ", req.body.username);
+  console.log("this is password: ", req.body.password);
   connection.query(query, (err, result) => {
     if (err) {
       console.log("user is not found");
       res.send(err);
     } else {
+      console.log(result);
       if (result[0] === undefined) {
         console.log("its not found");
         res.end("Username is not found");
