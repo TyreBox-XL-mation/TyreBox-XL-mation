@@ -39,14 +39,15 @@ CREATE TABLE ourservices (
   PRIMARY KEY (ID)
 );
 
-CREATE TABLE admin_log (
+CREATE TABLE adminlog (
   id int NOT NULL AUTO_INCREMENT,
   username varchar(50) NOT NULL,
-  email varchar(100) NOT NULL,
+  email varchar(200) NOT NULL,
   password varchar(100) NOT NULL,
   PRIMARY KEY (ID)
 );
-
+INSERT INTO adminlog ( username, email, password) VALUES 
+('ala', 'alaghelekchwaya@gmail.com','fuck' );
 
 -- tyre table 
 INSERT INTO tyre ( type, width, diameter, height) VALUES 

@@ -1,5 +1,7 @@
 const connection = require("../database-mysql/index.js");
 var bcrypt = require("bcryptjs");
+var jwt = require("jsonwebtoken");
+const { response } = require("express");
 
 module.exports.selectAll = (req, res) => {
   return new Promise((resolve, reject) => {
@@ -133,38 +135,98 @@ module.exports.postProduct = (req, res) => {
   });
 };
 
-module.exports.addAdmin = (req, res) => {
+module.exports.signup = (req, res) => {
   var values = [req.body.username, req.body.email, req.body.password];
   console.log(values);
-  var query = `INSERT INTO admin_log(username, email, password) VALUES (?, ?, ?)`;
+  var query = `INSERT INTO adminlog(username, email, password) VALUES (?, ?, ?)`;
   connection.query(query, values, (err, result) => {
-    res.send(result);
-  });
-};
-module.exports.logIn = (req, res) => {
-  var query = `SELECT password FROM admin_log WHERE username ="${req.body.username}" `;
-  console.log("this is password: ", req.body.password);
-  connection.query(query, (err, result) => {
     if (err) {
-      console.log("user is not found");
       res.send(err);
     } else {
-      console.log(result);
-      if (result[0] === undefined) {
-        console.log("its not found");
-        res.end("Username is not found");
-        return;
-      }
-      var checked = bcrypt.compareSync(
-        `${req.body.password}`,
-        result[0].password
-      );
-      if (!checked) {
-        res.end("Incorrect password");
-        return;
-      } else {
-        res.send(checked);
-      }
+      res.send(result);
     }
   });
 };
+module.exports.login = (req, res) => {
+  var query = `SELECT password FROM adminlog WHERE username ="${req.body.username}" `;
+  connection.query(query, (err, result) => {
+    if (err) {
+      res.send({ err });
+    }
+    if (result) {
+      const password = req.body.password;
+      if (result[0] === undefined) {
+        res.end("user not found");
+        return;
+      }
+      bcrypt.compare(password, result[0].password, (error, response) => {
+        if (response) {
+          const id = result[0].id;
+          const token = jwt.sign({ id }, "secret", { expiresIn: "1h" });
+          res.json({ auth: true, token, result });
+        } else {
+          res.json({ auth: false, message: "Incorrect password" });
+        }
+      });
+    } else {
+      res.json({ auth: false, message: "user is not found" });
+    }
+  });
+};
+
+// const verifyjwt = (req, res, next) => {
+//   const token = req.headers["x-access-token"];
+//   console.log(req.headers);
+//   console.log("message from token", token);
+//   if (!token) {
+//     res.send("Please give us a token!");
+//   } else {
+//     jwt.verify(token, "secret", (err, decoded) => {
+//       if (err) {
+//         res.json({ auth: false, message: "authentication failed" });
+//       } else {
+//         console.log(req);
+//         console.log(decoded);
+//         // req.user = decoded.id;
+//         next();
+//       }
+//     });
+//   }
+// };
+module.exports.verify = (req, res) => {
+  const token = req.headers["x-access-token"];
+  // console.log(req.headers);
+  // console.log("message from token", token);
+  if (!token) {
+    res.send("Please give us a token!");
+  } else {
+    jwt.verify(token, "secret", (err, decoded) => {
+      if (err) {
+        res.json({ auth: false, message: "authentication failed" });
+      } else {
+        // console.log(decoded);
+        res.send("you are authenticated,congrats!");
+        req.user = decoded.id;
+      }
+    });
+  }
+};
+
+// else {
+//   if (result[0] === undefined) {
+//     console.log("its not found");
+//     res.end("Username is not found");
+//     return;
+//   }
+//   var checked = bcrypt.compareSync(
+//     `${req.body.password}`,
+//     result[0].password
+//   );
+
+//   if (!checked) {
+//     res.end("Incorrect password");
+//     return;
+//   } else {
+//     res.send(checked);
+//   }
+// }
