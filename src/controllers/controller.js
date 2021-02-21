@@ -1,6 +1,7 @@
 const connection = require("../database-mysql/index.js");
 var bcrypt = require("bcryptjs");
 var jwt = require("jsonwebtoken");
+const { response } = require("express");
 
 module.exports.selectAll = (req, res) => {
   return new Promise((resolve, reject) => {
@@ -146,13 +147,17 @@ module.exports.signup = (req, res) => {
   });
 };
 module.exports.login = (req, res) => {
-  const password = req.body.password;
   var query = `SELECT password FROM adminlog WHERE username ="${req.body.username}" `;
   connection.query(query, (err, result) => {
     if (err) {
       res.send({ err });
     }
     if (result) {
+      const password = req.body.password;
+      if (result[0] === undefined) {
+        res.end("user not found");
+        return;
+      }
       bcrypt.compare(password, result[0].password, (error, response) => {
         if (response) {
           const id = result[0].id;
@@ -187,11 +192,24 @@ const verifyjwt = (req, res, next) => {
     });
   }
 };
-module.exports.verify =
-  (verifyjwt,
-  (req, res) => {
-    res.send("you are authenticated,congrats!");
-  });
+module.exports.verify = (req, res) => {
+  res.send("you are authenticated,congrats!");
+  const token = req.headers["x-access-token"];
+  // console.log(req.headers);
+  // console.log("message from token", token);
+  if (!token) {
+    res.send("Please give us a token!");
+  } else {
+    jwt.verify(token, "secret", (err, decoded) => {
+      if (err) {
+        res.json({ auth: false, message: "authentication failed" });
+      } else {
+        // console.log(decoded);
+        req.user = decoded.id;
+      }
+    });
+  }
+};
 
 // else {
 //   if (result[0] === undefined) {
@@ -203,7 +221,7 @@ module.exports.verify =
 //     `${req.body.password}`,
 //     result[0].password
 //   );
-//   it;
+
 //   if (!checked) {
 //     res.end("Incorrect password");
 //     return;

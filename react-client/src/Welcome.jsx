@@ -12,12 +12,19 @@ class Welcome extends React.Component {
       view: "welcome",
       test: "user",
       isLoggedIn: true,
+      currentUser: null,
     };
     this.changeView = this.changeView.bind(this);
     this.userIsAuth = this.userIsAuth.bind(this);
   }
   componentDidMount() {
     this.userIsAuth();
+    this.changeView("adminpannel");
+  }
+
+  logout() {
+    localStorage.removeItem("token");
+    this.changeView("home");
   }
 
   changeView(option) {
@@ -43,8 +50,10 @@ class Welcome extends React.Component {
           "x-access-token": localStorage.getItem("token"),
         },
       })
+
       .then((response) => {
-        this.setState({ isLoggedIn: response.data.auth });
+        this.setState({ currentUser: response.data.result });
+        console.log(localStorage.getItem("token"));
       });
   }
 
@@ -153,7 +162,11 @@ class Welcome extends React.Component {
         ) : this.state.view === "admin" ? (
           <Signupadmin />
         ) : (
-          <Admin />
+          <Admin
+            logout={() => {
+              this.logout();
+            }}
+          />
         )}
         <div className="footer-dark">
           <footer>
